@@ -5,11 +5,11 @@ import torch.nn as nn
 import torch.nn.functional as F
 import numpy as np
 
-import buffers
-import distributions
-import environments
-import utils
-from agent import Agent
+from smallrl import buffers
+from smallrl import distributions
+from smallrl import environments
+from smallrl import utils
+from .agent import Agent
 
 
 class REINFORCE(Agent):

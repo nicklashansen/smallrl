@@ -2,12 +2,12 @@ import torch
 import numpy as np
 import gym
 
-import algorithms
-import buffers
-import networks
-import environments
-import utils
-import schedules
+from smallrl import algorithms
+from smallrl import buffers
+from smallrl import networks
+from smallrl import environments
+from smallrl import utils
+from smallrl import schedules
 
 
 def train_agent(agent, criterion, verbose=True):
@@ -94,6 +94,8 @@ def init_acer_agent(env):
 
 
 if __name__ == '__main__':
+    print('Running smallrl demo.\nFor more information, visit https://github.com/nicklashansen/smallrl \n')
+
     env = gym.make('CartPole-v0')
     env = environments.TorchEnv(env)
     criterion = {'n': 100, 'target_reward': 195, 'max_episodes': 2000}
