@@ -1,6 +1,7 @@
 import gym
 import numpy as np
 import torch
+from scipy.signal import savgol_filter
 
 
 class RunningMean():
@@ -47,3 +48,7 @@ def transitions_to_sars(transitions):
         return states, actions, rewards, new_states, dones, aux_info
     else: 
         return states, actions, rewards, new_states, dones
+
+
+def smooth(signal, kernel_size, polyorder=3):
+	return savgol_filter(signal, kernel_size, polyorder)
