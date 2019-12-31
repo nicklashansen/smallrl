@@ -69,7 +69,6 @@ class CNN_MLP(nn.Module):
     """
     def __init__(self, channels, kernel_sizes, paddings, sizes):
         super().__init__()
-
         self.cnn = CNN(channels, kernel_sizes, paddings)
         self.mlp = MLP(*sizes)
 
