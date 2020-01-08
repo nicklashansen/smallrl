@@ -19,6 +19,8 @@ class MLP(nn.Module):
         self.layers = nn.Sequential(*layers)
 
     def forward(self, x):
+        if x.ndim > 2:
+            x = x.view(x.size(0), -1)
         return self.layers(x)
 
 
